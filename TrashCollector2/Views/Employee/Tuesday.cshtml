@@ -1,0 +1,39 @@
+﻿@model IEnumerable<TrashCollector2.Models.Employee>
+
+@{
+    ViewBag.Title = "Tuesday";
+}
+
+<h2>Tuesday</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.employeeZipcode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicationId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.employeeZipcode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplicationId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.employeeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.employeeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.employeeId })
+        </td>
+    </tr>
+}
+
+</table>
