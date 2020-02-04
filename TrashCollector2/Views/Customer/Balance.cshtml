@@ -1,0 +1,33 @@
+﻿@model TrashCollector2.Models.Customer
+
+@{
+    ViewBag.Title = "Balance";
+}
+
+<h2>Current Balance</h2>
+
+<hr />
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.balance)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.balance)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.MonthlyCharge)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.MonthlyCharge)
+    </dd>
+
+</dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
+© 2020 GitHub, Inc.
+

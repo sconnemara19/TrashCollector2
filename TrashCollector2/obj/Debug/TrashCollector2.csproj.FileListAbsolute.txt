@@ -104,3 +104,6 @@ C:\Users\simon\Desktop\Visual Studio\TrashCollector2\TrashCollector2\obj\Debug\T
 C:\Users\simon\Desktop\Visual Studio\TrashCollector2\TrashCollector2\obj\Debug\TrashCollector2.pdb
 C:\Users\simon\Desktop\Visual Studio\TrashCollector2\TrashCollector2\obj\Debug\TrashCollector2.Migrations.initial.resources
 C:\Users\simon\Desktop\Visual Studio\TrashCollector2\TrashCollector2\obj\Debug\TrashCollector2.csproj.GenerateResource.cache
+C:\Users\simon\Desktop\Visual Studio\TrashCollector2\TrashCollector2\obj\Debug\TrashCollector2.Migrations.second.resources
+C:\Users\simon\Desktop\Visual Studio\TrashCollector2\TrashCollector2\obj\Debug\TrashCollector2.Migrations.third.resources
+C:\Users\simon\Desktop\Visual Studio\TrashCollector2\TrashCollector2\obj\Debug\TrashCollector2.Migrations.fourth.resources

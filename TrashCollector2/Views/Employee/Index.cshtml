@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Today's Pickups</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -17,28 +17,11 @@
         <th>
             @Html.DisplayNameFor(model => model.LastName)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StreetAddress)
-        </th>
+        
         <th>
             @Html.DisplayNameFor(model => model.Zipcode)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.pickupDay)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.balance)
-        </th>
         
-        <th>
-            @Html.DisplayNameFor(model => model.pickupConfirmed)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Start)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.End)
-        </th>
         <th></th>
     </tr>
 
@@ -51,32 +34,17 @@
             <td>
                 @Html.DisplayFor(modelItem => item.LastName)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.StreetAddress)
-            </td>
+            
             <td>
                 @Html.DisplayFor(modelItem => item.Zipcode)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.pickupDay)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.balance)
-            </td>
             
-            <td>
-                @Html.DisplayFor(modelItem => item.pickupConfirmed)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Start)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.End)
-            </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                 @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })|
+                @Html.ActionLink("ConfirmedPickupCharge", "COnfirmedPickupCharge", new { id = item.Id }) |
+                @Html.ActionLink("ScheduleForTheDay", "ScheduleForTheDay", new { id = item.Id })
             </td>
         </tr>
     }

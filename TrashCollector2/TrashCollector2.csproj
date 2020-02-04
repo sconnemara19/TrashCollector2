@@ -180,6 +180,18 @@
     <Compile Include="Migrations\201911042210457_initial.Designer.cs">
       <DependentUpon>201911042210457_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001292100039_second.cs" />
+    <Compile Include="Migrations\202001292100039_second.Designer.cs">
+      <DependentUpon>202001292100039_second.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001302250473_third.cs" />
+    <Compile Include="Migrations\202001302250473_third.Designer.cs">
+      <DependentUpon>202001302250473_third.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202002040026585_fourth.cs" />
+    <Compile Include="Migrations\202002040026585_fourth.Designer.cs">
+      <DependentUpon>202002040026585_fourth.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -256,19 +268,22 @@
     <Content Include="Views\Employee\Details.cshtml" />
     <Content Include="Views\Employee\Edit.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
-    <Content Include="Views\Employee\List.cshtml" />
     <Content Include="Views\Customer\Index.cshtml" />
     <Content Include="Views\Customer\Details.cshtml" />
     <Content Include="Views\Customer\Create.cshtml" />
     <Content Include="Views\Customer\Edit.cshtml" />
     <Content Include="Views\Customer\Delete.cshtml" />
-    <Content Include="Views\Employee\Monday.cshtml" />
-    <Content Include="Views\Employee\Tuesday.cshtml" />
-    <Content Include="Views\Employee\Wednesday.cshtml" />
-    <Content Include="Views\Employee\Thursday.cshtml" />
-    <Content Include="Views\Employee\Friday.cshtml" />
-    <Content Include="Views\Employee\Saturday.cshtml" />
-    <Content Include="Views\Employee\View.cshtml" />
+    <Content Include="Views\Employee\WorkForMonday.cshtml" />
+    <Content Include="Views\Employee\WorkForTuesday.cshtml" />
+    <Content Include="Views\Employee\WorkForWednesday.cshtml" />
+    <Content Include="Views\Employee\WorkForThursday.cshtml" />
+    <Content Include="Views\Employee\WorkForSaturday.cshtml" />
+    <Content Include="Views\Employee\WorkForSunday.cshtml" />
+    <Content Include="Views\Customer\Balance.cshtml" />
+    <Content Include="Views\Customer\ExtraPickup.cshtml" />
+    <Content Include="Views\Employee\ConfirmedPickupCharge.cshtml" />
+    <Content Include="Views\Employee\WorkForFriday.cshtml" />
+    <Content Include="Views\Employee\ScheduleForTheDay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -289,6 +304,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201911042210457_initial.resx">
       <DependentUpon>201911042210457_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001292100039_second.resx">
+      <DependentUpon>202001292100039_second.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001302250473_third.resx">
+      <DependentUpon>202001302250473_third.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202002040026585_fourth.resx">
+      <DependentUpon>202002040026585_fourth.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

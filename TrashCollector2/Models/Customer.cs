@@ -33,7 +33,8 @@ namespace TrashCollector2.Models
         [Display(Name = "Pickup Day")]
         public DayOfWeek pickupDay { get; set; }
 
-
+        [Display(Name =" Monthly Charge")]
+        public double? MonthlyCharge { get; set; }
 
         [Display(Name = "Balance")]
         public double? balance { get; set; }
@@ -45,17 +46,17 @@ namespace TrashCollector2.Models
 
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:YYYY-MM-DD}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Extra Pickup Day")]
         public DateTime? PickupDate { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:YYYY-MM-DD}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Start Suspension")]
         public DateTime? Start { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:YYYY-MM-DD}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "End Suspension")]
         public DateTime? End { get; set; }
 

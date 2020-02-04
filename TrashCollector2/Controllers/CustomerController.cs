@@ -66,18 +66,10 @@ namespace TrashCollector2.Controllers
         }
 
         // GET: Customers/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Customer customer = db.Customers.Find(id);
-            if (customer == null)
-            {
-                return HttpNotFound();
-            }
-            return View(customer);
+            var editCustomer = db.Customers.Where(c => c.Id == id).FirstOrDefault();
+            return View(editCustomer);
         }
 
         // POST: Customers/Edit/5
@@ -85,7 +77,7 @@ namespace TrashCollector2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,StreetAddress,Zipcode,pickupDay,balance,monthlyCharge,pickupConfirmed,Start,End")] Customer customer)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,StreetAddress,City,State, Zipcode, pickupDay, pickupConfirmed,Start,End")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -121,4 +113,34 @@ namespace TrashCollector2.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-    }    }
+        //GET: Customers/Edit/5
+        public ActionResult ExtraPickup(int id)
+        {
+            var editCustomer = db.Customers.Where(c => c.Id == id).FirstOrDefault();
+            return View(editCustomer);
+        }
+        [HttpPost]
+        public ActionResult ExtraPickup(int id, Customer customer)
+        {
+            try
+            {
+                var editCustomer = db.Customers.Where(c => c.Id == id).FirstOrDefault();
+                editCustomer.PickupDate = customer.PickupDate;
+                db.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+
+            catch
+            {
+                return View();
+            }
+        }
+        public ActionResult Balance(int id)
+        {
+            var customerDetails = db.Customers.Where(c => c.Id == id).FirstOrDefault();
+            return View(customerDetails);
+        }
+
+
+}    }

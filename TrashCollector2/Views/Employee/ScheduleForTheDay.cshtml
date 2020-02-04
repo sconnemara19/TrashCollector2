@@ -1,0 +1,23 @@
+﻿@model IEnumerable<TrashCollector2.Models.Customer>
+
+@{
+    ViewBag.Title = "ScheduleForTheDay";
+}
+
+<h2>ScheduleForTheDay</h2>
+<h3>Select the day you would like to search for pickups!</h3>
+
+<table class="table">
+    <tr>
+        <td>
+            @Html.ActionLink("WorkForMonday", "WorkForMonday", "Employee") |
+            @Html.ActionLink("WorkForTuesday", "WorkForTuesday", "Employee") |
+            @Html.ActionLink("WorkForWednesday", "WorkForWednesday", "Employee") |
+            @Html.ActionLink("WorkForThursday", "WorkForThursday", "Employee") |
+            @Html.ActionLink("WorkForFriday", "WorkForFriday", "Employee") |
+            @Html.ActionLink("WorkForSaturday", "WorkForSaturday", "Employee") |
+            @Html.ActionLink("WorkForSunday ", "WorkForSunday", "Employee")
+        </td>
+    </tr>
+</table>
+

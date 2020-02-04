@@ -27,6 +27,7 @@ namespace TrashCollector2.Controllers
         // GET: Employee/Details/5
         public ActionResult Details(int id)
         {
+            var employeeDetails = db.Employees.Where(d => d.employeeId == id).FirstOrDefault();
 
             return View();
         }
@@ -135,7 +136,7 @@ namespace TrashCollector2.Controllers
 
             var employeeId = User.Identity.GetUserId();
             var employee = db.Employees.Where(e => e.ApplicationId == employeeId).FirstOrDefault();
-            var results = db.Customers.Where(e => e.Zipcode == employee.employeeZipcode && e.pickupDay == DayOfWeek.Saturday);
+            var results = db.Customers.Where(e => e.Zipcode == employee.employeeZipcode && e.pickupDay == DayOfWeek.Saturday).ToList();
 
             return View(results);
         }
@@ -144,7 +145,7 @@ namespace TrashCollector2.Controllers
 
             var employeeId = User.Identity.GetUserId();
             var employee = db.Employees.Where(e => e.ApplicationId == employeeId).FirstOrDefault();
-            var results = db.Customers.Where(e => e.Zipcode == employee.employeeZipcode && e.pickupDay == DayOfWeek.Sunday);
+            var results = db.Customers.Where(e => e.Zipcode == employee.employeeZipcode && e.pickupDay == DayOfWeek.Sunday).ToList();
 
             return View(results);
         }
@@ -153,7 +154,7 @@ namespace TrashCollector2.Controllers
 
             var employeeId = User.Identity.GetUserId();
             var employee = db.Employees.Where(e => e.ApplicationId == employeeId).FirstOrDefault();
-            var results = db.Customers.Where(e => e.Zipcode == employee.employeeZipcode && e.pickupDay == DayOfWeek.Monday);
+            var results = db.Customers.Where(e => e.Zipcode == employee.employeeZipcode && e.pickupDay == DayOfWeek.Monday).ToList();
 
             return View(results);
         }
@@ -162,7 +163,7 @@ namespace TrashCollector2.Controllers
 
             var employeeId = User.Identity.GetUserId();
             var employee = db.Employees.Where(e => e.ApplicationId == employeeId).FirstOrDefault();
-            var results = db.Customers.Where(e => e.Zipcode == employee.employeeZipcode && e.pickupDay == DayOfWeek.Tuesday);
+            var results = db.Customers.Where(e => e.Zipcode == employee.employeeZipcode && e.pickupDay == DayOfWeek.Tuesday).ToList();
 
             return View(results);
         }
@@ -171,7 +172,7 @@ namespace TrashCollector2.Controllers
 
             var employeeId = User.Identity.GetUserId();
             var employee = db.Employees.Where(e => e.ApplicationId == employeeId).FirstOrDefault();
-            var results = db.Customers.Where(e => e.Zipcode == employee.employeeZipcode && e.pickupDay == DayOfWeek.Wednesday);
+            var results = db.Customers.Where(e => e.Zipcode == employee.employeeZipcode && e.pickupDay == DayOfWeek.Wednesday).ToList();
 
             return View(results);
         }
@@ -179,7 +180,7 @@ namespace TrashCollector2.Controllers
         {
             var employeeId = User.Identity.GetUserId();
             var employee = db.Employees.Where(e => e.ApplicationId == employeeId).FirstOrDefault();
-            var results = db.Customers.Where(e => e.Zipcode == employee.employeeZipcode && e.pickupDay == DayOfWeek.Thursday);
+            var results = db.Customers.Where(e => e.Zipcode == employee.employeeZipcode && e.pickupDay == DayOfWeek.Thursday).ToList();
 
             return View(results);
 
@@ -190,10 +191,41 @@ namespace TrashCollector2.Controllers
 
             var employeeId = User.Identity.GetUserId();
             var employee = db.Employees.Where(e => e.ApplicationId == employeeId).FirstOrDefault();
-            var results = db.Customers.Where(e => e.Zipcode == employee.employeeZipcode && e.pickupDay == DayOfWeek.Friday);
+            var results = db.Customers.Where(e => e.Zipcode == employee.employeeZipcode && e.pickupDay == DayOfWeek.Friday).ToList();
 
             return View(results);
         }
+        public ActionResult PickupCharge(int id)
+        {
+            var charge = db.Customers.Where(c => c.Id == id).FirstOrDefault();
+            return View (charge);
+        } 
+        [HttpPost]
+        public ActionResult ConfirmedPickupCharge(int id, Customer customer)
+        {
+
+            try
+            {
+                var charge = db.Customers.Where(c => c.Id == id).FirstOrDefault();
+                charge.pickupConfirmed = customer.pickupConfirmed;
+                charge.MonthlyCharge = customer.MonthlyCharge;
+                db.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+
+
+
+        }
+        public ActionResult ScheduleForTheDay()
+        {
+            return View();
+        }
+
 
 
 
